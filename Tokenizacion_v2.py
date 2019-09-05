@@ -10,7 +10,12 @@ with open ("C:/Users/lore_/OneDrive/Documentos/Escuela/tercer  semestre/LN/recur
 	oraciones = es_tokenizador_oraciones.tokenize(parrafo)
 	# Obtener tokens de cada oraci´on
 	var=[]
+	freq = []
 	for s in oraciones:
 		var=var+[t for t in toktok.tokenize(s)]
-	print (var)
+		for w in var:
+			freq.append(var.count(w))
+	#print (var)
+	frecuenciaPalabras = [var.count(p) for p in var]
+	print(dict(zip(var,frecuenciaPalabras)))
 file.close()
